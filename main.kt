@@ -8,7 +8,16 @@ fun main() {
     val isImmortal = false
     val karma = (pow(random(),(110-healthPoints)/100.0)*20).toInt()
     //Aura
-    val auraVisible = isBlessed && healthPoints > 50 || isImmortal
+   // val auraVisible = isBlessed && healthPoints > 50 || isImmortal
+    val auraColor = auraColor(karma)
+
+    val healthStatus = formatHealthStatus(healthPoints, isBlessed)
+    val statusFormatString = "(健康指數: $healthPoints)(karma: $karma ，光環: $auraColor) (運勢: ${if (isBlessed) "走運" else "很背"}) -> $name $healthStatus"
+
+    println(statusFormatString)
+}
+
+private fun auraColor(karma: Int): String {
     val auraColor = when (karma) {
         in (0..5) -> "紅色"
         in (6..10) -> "橘色"
@@ -16,11 +25,7 @@ fun main() {
         in (16..20) -> "綠色"
         else -> "無光環"
     }
-
-    val healthStatus = formatHealthStatus(healthPoints, isBlessed)
-    val statusFormatString = "(健康指數: $healthPoints)(光環: $auraColor) (運勢: ${if (isBlessed) "走運" else "很背"}) -> $name $healthStatus"
-
-    println(statusFormatString)
+    return auraColor
 }
 
 private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean): String {
