@@ -14,7 +14,7 @@ fun main() {
     val healthStatus = formatHealthStatus(healthPoints, isBlessed)
     printPlayerStatus(healthPoints, karma, auraColor, isBlessed, name, healthStatus)
 
-    castFireBall(12)
+    drunkennes(x=castFireBall(12))
 }
 
 private fun printPlayerStatus(
@@ -55,4 +55,17 @@ private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean) =
 private fun castFireBall(numFireballs: Int = 2): Int {
     print("FireBall杯數(x$numFireballs)")
     return numFireballs
+}
+
+private fun drunkennes(x: Int){
+    val s= when (x) {
+        in 41..50 -> "爛醉如泥"
+        in 31..40 -> "大醉"
+        in 21..30 -> "醉了"
+        in 11..20 -> "微醉"
+        in 1..10 -> "微醺"
+        0 -> "未喝酒"
+        else -> "超出範圍"
+    }
+    println("醉酒程度: $s")
 }
