@@ -30,18 +30,17 @@ private fun printPlayerStatus(
     println(statusFormatString)
 }
 
-private fun auraColor(karma: Int): String {
-    val auraColor = when (karma) {
+private fun auraColor(karma: Int) =
+    when (karma) {
         in (0..5) -> "紅色"
         in (6..10) -> "橘色"
         in (11..15) -> "紫色"
         in (16..20) -> "綠色"
         else -> "無光環"
     }
-    return auraColor
-}
 
-private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean) = when (healthPoints) {
+private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean) =
+    when (healthPoints) {
         100 -> "健康狀態極佳"
         in 90..99 -> "有一些小擦傷"
         in 75..89 -> if (isBlessed) {
