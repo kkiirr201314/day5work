@@ -54,3 +54,6 @@ private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean): String {
     }
     return healthStatus
 }
+private fun  castFireBall(){
+    print("一杯castFireBall應運而生。")
+}
