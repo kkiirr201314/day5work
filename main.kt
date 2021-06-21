@@ -41,8 +41,7 @@ private fun auraColor(karma: Int): String {
     return auraColor
 }
 
-private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean): String {
-    val healthStatus = when (healthPoints) {
+private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean) = when (healthPoints) {
         100 -> "健康狀態極佳"
         in 90..99 -> "有一些小擦傷"
         in 75..89 -> if (isBlessed) {
@@ -54,8 +53,5 @@ private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean): String {
         //顯示玩家狀態
         else -> "情況不妙"
     }
-    return healthStatus
-}
-private fun castFireBall(numFireballs: Int = 2){
+private fun castFireBall(numFireballs: Int = 2) =
     print("一杯castFireBall應運而生。(x$numFireballs)")
-}
