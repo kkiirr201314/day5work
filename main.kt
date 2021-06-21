@@ -12,9 +12,20 @@ fun main() {
     val auraColor = auraColor(karma)
 
     val healthStatus = formatHealthStatus(healthPoints, isBlessed)
+    printPlayerStatus(healthPoints, karma, auraColor, isBlessed, name, healthStatus)
+}
+
+private fun printPlayerStatus(
+    healthPoints: Int,
+    karma: Int,
+    auraColor: String,
+    isBlessed: Boolean,
+    name: String,
+    healthStatus: String
+){
     val statusFormatString = "(健康指數: $healthPoints)(karma: $karma ，光環: $auraColor) (運勢: ${if (isBlessed) "走運" else "很背"}) -> $name $healthStatus"
 
-    println(statusFormatString)
+    print(statusFormatString)
 }
 
 private fun auraColor(karma: Int): String {
