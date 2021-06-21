@@ -14,7 +14,7 @@ fun main() {
     val healthStatus = formatHealthStatus(healthPoints, isBlessed)
     printPlayerStatus(healthPoints, karma, auraColor, isBlessed, name, healthStatus)
 
-    castFireBall()
+    castFireBall(5)
 }
 
 private fun printPlayerStatus(
@@ -56,6 +56,6 @@ private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean): String {
     }
     return healthStatus
 }
-private fun castFireBall(){
-    print("一杯castFireBall應運而生。")
+private fun castFireBall(numFireballs: Int){
+    print("一杯castFireBall應運而生。(x$numFireballs)")
 }
