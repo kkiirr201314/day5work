@@ -13,6 +13,8 @@ fun main() {
 
     val healthStatus = formatHealthStatus(healthPoints, isBlessed)
     printPlayerStatus(healthPoints, karma, auraColor, isBlessed, name, healthStatus)
+
+    castFireBall()
 }
 
 private fun printPlayerStatus(
@@ -25,7 +27,7 @@ private fun printPlayerStatus(
 ){
     val statusFormatString = "(健康指數: $healthPoints)(karma: $karma ，光環: $auraColor) (運勢: ${if (isBlessed) "走運" else "很背"}) -> $name $healthStatus"
 
-    print(statusFormatString)
+    println(statusFormatString)
 }
 
 private fun auraColor(karma: Int): String {
@@ -54,6 +56,6 @@ private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean): String {
     }
     return healthStatus
 }
-private fun  castFireBall(){
+private fun castFireBall(){
     print("一杯castFireBall應運而生。")
 }
